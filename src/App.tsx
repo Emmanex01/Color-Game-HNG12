@@ -20,6 +20,12 @@ function App() {
 
   // initialize the game at start
   const newGame = () => {
+    // reshuffle the options
+    colors.sort(() => {
+      return Math.random() - 0.5
+    })
+    console.log(colors)
+
     // target color
     const newTargetColor = randomColorGenerator();
     setTargetColor(newTargetColor);
@@ -46,17 +52,14 @@ function App() {
   
   
 
-  // reshuffle the options
-  colors.sort(() => {
-    return Math.random() - 0.5
-  })
-  console.log(colors)
+
 
   // Checks for the correct answer
   const handleClick = (selectedColor:string) => {
     if(selectedColor === targetColor ) {
       setStatus("You are correct!");
       setScore( prev => prev + 1);
+      newGame();
     } else {
       setStatus("You are Wrong")
     }

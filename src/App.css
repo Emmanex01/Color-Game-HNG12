@@ -1,5 +1,5 @@
 .mainContainer{
-  width: 500px;
+  max-width: 500px;
   margin: 0 auto;
   background-color: rgb(17, 17, 138);
   
@@ -8,6 +8,7 @@
 #colorBox {
   width: 200px;
   height: 200px;
+  padding: 6px;
   margin: 20px auto;
   border: 2px solid black;
 }
@@ -25,8 +26,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   gap: 10px;
   margin: 20px 0;
+  padding: 6px;
 }
 
 #newGameButton{
@@ -38,11 +41,22 @@
   margin: 10px;
 }
 
+#newGameButton:hover{
+  background-color: blueviolet;
+  transition: all 0.2s ease-in;
+}
+
+#newGameButton:active{
+  background-color: red;
+  transition: all 0.2s ease-in-out;
+}
+
 .newGameButtonContainer{
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 #gameInstructions,
 #score,
